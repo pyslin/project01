@@ -29,6 +29,6 @@ def gradeStudents(request,num):
 
     #班级对象.小写学生类名_set。all（）
     studentsList = grade.students_set.all()
-1
+
     #有了数据,模板  然后渲染，传回页面
     return render(request, 'myapp/students.html', {'students': studentsList})
