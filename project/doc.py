@@ -46,6 +46,7 @@ grade1 = Grades()
 grade1.name = 'python04'
 grade1.save()
 model类名.objects.all()
+model类名.objects.get()
 对象.model类名_set.all()
 
 database: select * from myapp_grades
