@@ -58,4 +58,26 @@ LANGUAGE_CODE = 'zh-hans'
 TIME_ZONE =  'Asia/Shanghai'
 
 
+
+git clone /path/to/repository（克隆到本地仓库）
+git clone username@host:/path/to/repository（克隆到网上仓库）
+
+
+git update添加(暂时）和提交commit
+
+git push origin maste （更新push到网上仓库）
+
+
+把网上的拉下来：
+git pull
+
+分支是用来将特性开发（新功能）绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。
+在其他分支上进行开发，完成后再将它们合并到主分支上。
+创建一个叫做“develop”的分支，并切换过去：
+git checkout -b develop
+
+切换回主分支：
+git checkout master
+
+
 """
