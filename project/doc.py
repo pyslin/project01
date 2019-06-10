@@ -61,7 +61,7 @@ TIME_ZONE =  'Asia/Shanghai'
 
 git clone /path/to/repository（克隆到本地仓库）
 git clone username@host:/path/to/repository（克隆到网上仓库）
-
+share project on github   project  pyslin
 
 git update添加(暂时）和提交commit
 
@@ -80,4 +80,38 @@ git checkout -b develop
 git checkout master
 
 
+
+TextField
+DecimalField(max_digits,decimal_places) 小数（总位数，点后位数）
+FloatField
+NullBooleanField
+
+DataField(auto_now=Ture,auto_now_add=)
+可以保存修改时间  或第一创建时间
+TimeField
+DateTimeField
+
+FileField
+上传文件的字段
+ImageField
+图片（会校验是否图片）
+
+null
+是否保存null
+ blanke
+ db_column
+ 可以指定列名
+ unique=True
+
+ForeignKey
+一对多，在多端
+访问：.对象。模型类小写_set
+grade.students_set
+访问id  student.sgrade_id
+ ManyToManyField
+在两端都要
+
+insert into students(sname,sgender,scontend,isDelete,sgrade_id,sage) values('','',..)('',''..)
+stud = Students.objects.get(pk=1)
+stu.sage= 20
 """

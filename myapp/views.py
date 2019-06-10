@@ -26,9 +26,23 @@ def students(request):
 def gradeStudents(request,num):
     #model里面对应班级
     grade = Grades.objects.get(pk=num)
-
     #班级对象.小写学生类名_set。all（）
     studentsList = grade.students_set.all()
-
     #有了数据,模板  然后渲染，传回页面
     return render(request, 'myapp/students.html', {'students': studentsList})
+
+def addstudent(request):
+    grade = Grades.objects.get(pk=1)
+    stu = Students.createStudent('刘德华', 34, True, '我叫刘德华', grade)
+    stu.save()
+    return HttpResponse('have created one student')
+
+#分页取数据
+def stupage(request,page):
+    #model里面取数据
+    page = int(page)
+    studentsList = Students.objects.all()[(page-1)*5:page*5]
+    #studentsList = Students.objects.all()[0:3]这里下标不能负数
+    #有了数据,模板  然后渲染，传回页面
+    return render(request, 'myapp/students.html', {'students': studentsList})
+#数据集会放缓存的，方便下次查询
