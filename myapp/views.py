@@ -79,3 +79,39 @@ def gradesFilter(request):
     g = Grades.objects.filter(ggirlnum__gt=F('gboynum')+10)
     print(g)
     return HttpResponse('****')
+
+def attribles(request):
+    print(request.path)
+    print(request.method)
+    print(request.encoding)
+    print(request.GET)
+    print(request.POST)
+    print(request.FILES)
+    print(request.COOKIES)
+    print(request.session)
+    print()
+    return HttpResponse('attibels')
+
+def get1(request):
+    a = request.GET.get('a')
+    b = request.GET.get('b')
+    c = request.GET.get('c')
+    return HttpResponse(a+' '+b+' '+c)
+#http://127.0.0.1:8000/get1/?a=1&b=2&c=3
+
+def get2(request):
+    a = request.GET.getlist('a')
+    a1 = a[0]
+    a2 = a[1]
+    return HttpResponse(a1+' '+a2)
+#http://127.0.0.1:8000/get2/?a=1&a=2
+
+def showregister(request):
+    return render(request,'myapp/register.html')
+
+def register(request):
+    name = request.POST.get('name')
+    gender = request.POST.get('gender')
+    age = request.POST.get('age')
+    hobby = request.POST.getlist('hobby')
+    return HttpResponse('register done')

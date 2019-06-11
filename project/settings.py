@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y-+91r5n045e-t+)e8r=1@+f_l7y$l^6h)7#^7nx(n$iy%)p7l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+#生产环境False
+DEBUG = False
+#允许任何人访问
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,7 +76,8 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-
+import pymysql         # 一定要添加这两行！
+pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

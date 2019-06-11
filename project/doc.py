@@ -119,4 +119,7 @@ stu.sage= 20
 400客户端出错
 404找不到网页无匹配视图
 500服务器端出错
+
+path method encoding GET POST FILES COKKIES session
+get() getlist()
 """
