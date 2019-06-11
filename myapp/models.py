@@ -31,6 +31,7 @@ class Students(models.Model):
     scontend = models.CharField(max_length=20)
     sage = models.IntegerField()
     isDelete = models.BooleanField(default=False)
+    lasttime = models.DateTimeField(auto_now=True)
     #关联外键
     sgrade = models.ForeignKey('Grades',on_delete=models.CASCADE)
     def __str__(self):

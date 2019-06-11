@@ -112,6 +112,11 @@ grade.students_set
 在两端都要
 
 insert into students(sname,sgender,scontend,isDelete,sgrade_id,sage) values('','',..)('',''..)
+select where like  .. from
 stud = Students.objects.get(pk=1)
 stu.sage= 20
+
+400客户端出错
+404找不到网页无匹配视图
+500服务器端出错
 """
