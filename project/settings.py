@@ -24,7 +24,7 @@ SECRET_KEY = 'y-+91r5n045e-t+)e8r=1@+f_l7y$l^6h)7#^7nx(n$iy%)p7l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #生产环境False
-DEBUG = False
+DEBUG = True
 #允许任何人访问
 ALLOWED_HOSTS = ['*']
 
@@ -128,3 +128,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+#设置session存储在redies
+SESSION_ENGINE = 'redis_sessions.session'
+SESSION_REDIS = {
+    'host': 'localhost',
+    'port': 6379,
+    'db': 0,
+    'password': '',
+    'prefix': 'session',
+    'socket_timeout': 1
+}
+
+CACHES = {
+'default': {
+'BACKEND': 'redis_cache.cache.RedisCache',
+'LOCATION': '127.0.0.1:6379',
+"OPTIONS": {
+"CLIENT_CLASS": "redis_cache.client.DefaultClient",
+},
+},}

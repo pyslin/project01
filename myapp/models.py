@@ -53,4 +53,5 @@ class Students(models.Model):
             sgrade=grade,
         )
         return stu
-
+    def getname(self):
+        return self.sname

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<!--django其它默认后面都帮加个/，但form post这里不帮,自己加-->
+    <form action="/showmain/" method="post" >
+    {% csrf_token %}
+        <!--属性不是逗号隔开-->
+        <input type="text" name="username"/>
+        <input type="submit" value="登录"/>
+
+    </form>
+</body>
+</html>
