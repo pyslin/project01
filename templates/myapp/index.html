@@ -1,10 +1,22 @@
+{% load static from staticfiles %}
+<!--从staticfiles引入 取名为static-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>模板</title>
+    <title>首页</title>
+    {% comment %}
+    <link rel="stylesheet" type="text/css"
+    href="static/myapp/css/style.css"/>
+    <script type="text/javascript" src="/static/myapp/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/static/myapp/js/sunck.js"></script>
+    {% endcomment %}
+    <link rel="stylesheet" type="text/css" href='{% static 'myapp/css/style.css' %}'/>
+    <script type="text/javascript" src='{% static 'myapp/js/jquery-3.4.1.min.js' %}'></script>
+    <script type="text/javascript" src='{% static 'myapp/js/sunck.js' %}'></script>
 </head>
 <body>
+{% comment %}
     <h1>{{ stu.sname }}</h1>
     <h1>{{ stu.getname }}</h1>
     <!--可以用无参方法-->
@@ -13,6 +25,12 @@
     {%  if num  %}
         <h1>sunck is a nice man</h1>
     {% endif %}
+  {% endcomment %}
+
+    <h1>sunck is a good man</h1>
+
+    <img src="{% static 'myapp/img/u=2512412073,484693686&fm=26&gp=0.jpg'%}"/>
+
 
 </body>
 </html>

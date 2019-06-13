@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #header{
+            width: 100%;
+            height: 100px;
+            background-color: aqua;
+        }
+        #footer{
+            width: 100%;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">header</div>
+
+{% comment %}
+可以挖坑，然后继承填坑
+{% endcomment %}
+    <div id ='main'>
+        {% block main1 %}
+
+        {% endblock main1 %}
+    <hr/>
+        {% block main2 %}
+
+        {% endblock main2 %}
+    </div>
+
+    <div id="footer">footer</div>
+</body>
+
+</html>

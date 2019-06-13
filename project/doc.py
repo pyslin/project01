@@ -154,4 +154,7 @@ def addbooktodatabase(request):
 
 安装redis
 pip install django-redis-sessions 配置setting 用redis作为缓存
+
+pip install list
+验证码
 """

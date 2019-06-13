@@ -8,10 +8,17 @@
     <h1>学生信息列表</h1>
     <ul>
         {% for student in students %}
-            <li>
+
+            {% if forloop.counter|divisibleby:2 %}
             <!--循环的计数器-->
-            {{ forloop.counter }}--{{ student.sname }}--{{ student.scontend }}
-            </li>
+                <li style="color: aqua">
+                {{ forloop.counter }}--{{ student.sname }}--{{ student.scontend }}
+                </li>
+             {% else %}
+                <li style="color: orangered">
+                {{ forloop.counter }}--{{ student.sname }}--{{ student.scontend }}
+                </li>
+                {% endif %}
          {% empty %}
             <h1>目前没有学生，empty是没有对象时调用</h1>
         {% endfor %}

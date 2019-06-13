@@ -153,7 +153,7 @@ def main(request):
     #取session，后值是取不到时默认
     username = request.session.get('name','游客')
     print(username)
-    return render(request,'myapp/main.html',{'username':username})
+    return render(request,'myapp/main.html',{'username':username,'code':'<h1>sunck is a good man </h1>'})
 
 def login(request):
     return render(request,'myapp/login.html')

@@ -1,13 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>我</title>
-</head>
-<body>
+{% extends 'myapp/base.html' %}
+
+{% block main1 %}
+<h1>Welcome!</h1>
+{% endblock main1 %}
+
+{% block main2 %}
+
     <h1>欢迎，{{ username }}</h1>
+    {% comment %}
     <!--前面加斜杠跳转是网址端口/login，不加斜杠是网址端口/main/login-->
     <a href="/login">登录</a>
     <a href="/quit">退出登录</a>
-</body>
-</html>
+    {% endcomment %}
+    <a href='{% url 'myapp:login' %}'>登录</a>
+    <a href={% url 'myapp:quit' %}>退出登录</a>
+    <hr/>
+
+    {{ code }}
+    {{ code|safe }}
+    {% comment %}
+    加上safe当成代码渲染 而不是普通字符串{% autoescape off %}
+        {{ code1 }}
+        {{ code2 }}
+    {% endautoescape %}
+
+    {% endcomment %}
+
+
+
+{% endblock main2 %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+app_name = 'admin'
 # Register your models here.
 #当前目录下models
 from myapp.models import Grades, Students
